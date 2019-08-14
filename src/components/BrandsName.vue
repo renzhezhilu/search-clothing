@@ -19,13 +19,15 @@
       :fetch-suggestions="querySearch"
       placeholder="请输入品牌名称"
       @select="handleSelect"
+      @clear = "$emit('state',null)"
       style="width:100%; "
+      clearable
     >
     <!-- :autofocus="true" -->
-      <i class="el-icon-edit el-input__icon" slot="suffix" @click="handleIconClick"></i>
+      <!-- <i class="el-icon-edit el-input__icon" slot="suffix" @click="handleIconClick"></i> -->
       <template slot-scope="{ item }" >
         <div class="flex_center">
-          <img :src="item.brand_logo" width="140" alt />
+          <img :src="item.brand_logo_base64" width="140" alt />
           <div class="name">{{ item.name }}</div>
         </div>
       </template>
@@ -34,7 +36,8 @@
 </template>
 
 <script>
-import orangeshineBrands from "../data-json/orangeshineBrands.json";
+// import orangeshineBrands from "../data-json/orangeshineBrands.json";
+import orangeshineBrands from "../data-json/orangeshineBrandsLocal.json";
 
 export default {
   name: "BrandsName",
@@ -51,19 +54,13 @@ export default {
     };
   },
   created() {
-    let newArr = [];
-    let arr = orangeshineBrands.data.brands;
-    for (const key in arr) {
-      if (arr.hasOwnProperty(key)) {
-        const element = arr[key];
-        newArr = element.concat(newArr);
-      }
-    }
-    newArr.sort((a, b) => {
-      return a.name.localeCompare(b.name);
-    });
-    console.log(newArr);
-    this.orangeshineBrandsData = newArr;
+    // let newArr = [];
+    // let arr = orangeshineBrands.data.brands;
+    // newArr.sort((a, b) => {
+    //   return a.name.localeCompare(b.name);
+    // });
+    // console.log(newArr);
+    this.orangeshineBrandsData = orangeshineBrands;
   },
   methods: {
     querySearch(queryString, cb) {
@@ -89,6 +86,8 @@ export default {
       this.state = item.name;
       this.url = "https://www.orangeshine.com" + item.url;
       this.url_text = item.name;
+      this.$emit("state",item);
+
     },
     handleIconClick(ev) {
       console.log(ev);
@@ -98,9 +97,9 @@ export default {
     this.restaurants = this.loadAll();
   },
   watch: {
-    state: function(val, oldVal) {
-      this.$emit("state",this.state);
-    }
+    // state: function(val, oldVal) {
+    //   this.$emit("state",this.state);
+    // }
   }
 };
 </script>

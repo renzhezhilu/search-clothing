@@ -9,6 +9,7 @@ Vue.config.productionTip = false;
 //axios请求插件
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import './registerServiceWorker'
 Vue.use(VueAxios, axios)
 
 new Vue({

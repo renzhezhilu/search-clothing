@@ -15,7 +15,7 @@ export default {
 
 <style>
 #app {
-  padding: 10px;
+  padding: 5px 10px;
 }
 /* 格式化 */
 html,
