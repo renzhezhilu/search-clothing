@@ -15,16 +15,16 @@ module.exports = {
     //打包map文件
     productionSourceMap: false,
     
-    // //配置全局less，不用每个vue文件都引入
-    // css: {
-    //     loaderOptions: {
-    //       sass: {
-    //         data: `
-    //           @import "@/assets/sass/common/_index.scss";
-    //         `
-    //       }
-    //     }
-    //   },
+    //配置全局less，不用每个vue文件都引入
+    css: {
+        loaderOptions: {
+          sass: {
+            data: `
+              @import "@/assets/sass/common/_index.scss";
+            `
+          }
+        }
+      },
     
 }
 

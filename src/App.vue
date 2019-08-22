@@ -13,54 +13,14 @@ export default {
 };
 </script>
 
-<style>
-#app {
-  padding: 5px 10px;
-}
-/* 格式化 */
-html,
-body {
-  margin: 0;
-  padding: 0;
-  font-weight: 400;
-  user-select: none;
-  width: 100%;
-}
+<style lang='scss'>
+//格式化
+@import "./assets/sass/common/_reset.scss";
+@import "./assets/sass/common/_normalize.scss";
+@import "./assets/sass/common/_animation.scss";
+//图标
+@import url("https://at.alicdn.com/t/font_1063021_ggwiar4alcl.css");
+@import url("./assets/font/icon.css");
+// .iconfont {font-size: inherit;/* 不用默认设置大小font-size: 16px; */}
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-span,
-p,
-ul,
-li,
-table,
-tr,
-td,
-input,
-a,
-dl,
-dt,
-dd {
-  font-family: "Lato", sans-serif;
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  list-style: none;
-}
-
-img {
-  vertical-align: top;
-  border: none;
-}
-
-*,
-*:after,
-*:before {
-  transition: 0.2s ease;
-  box-sizing: border-box;
-}
 </style>

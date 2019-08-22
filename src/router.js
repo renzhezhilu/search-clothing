@@ -1,35 +1,54 @@
 import Vue from "vue";
 import Router from "vue-router";
 
-Vue.use(Router);
-
-import about from "./views/About.vue";
-export default new Router({
-  routes: [
-    {
-      path: "/",
-      name: "about",
-      component: about
-    },
-  ]
-});
 
 // import home from "./views/Home.vue";
+
+Vue.use(Router);
+
+
+// import about from "./views/About.vue";
 // export default new Router({
 //   routes: [
 //     {
 //       path: "/",
-//       name: "home",
-//       component: home
-//     },
-//     {
-//       path: "/about",
 //       name: "about",
-//       // route level code-splitting
-//       // this generates a separate chunk (about.[hash].js) for this route
-//       // which is lazy-loaded when the route is visited.
-//       component: () =>
-//         import("./views/About.vue")
-//     }
+//       component: about
+//     },
 //   ]
 // });
+
+let router = new Router({
+    routes: [
+        {
+            path: "/",
+            name: "search",
+            component: () => import("./search_src/views/Search.vue"),
+            meta: {
+                title: 'search-clothing' // 标题设置
+            }
+        },
+        // {
+        //     path: "/home",
+        //     name: "home",
+        //     component: () =>
+        //         import("./views/Home.vue")
+        // },
+        // {
+        //     path: "/about",
+        //     name: "about",
+        //     component: () =>
+        //         import("./views/About.vue")
+        // }
+    ]
+});
+
+//路由守卫
+router.beforeEach((to, from, next) => {
+    //修改页面title
+    if (to.meta.title) {
+      document.title = to.meta.title
+    }
+    next()
+  })
+export default router

@@ -30,7 +30,7 @@
           <div class="content_box">
             <!--  -->
             <div class="content_li" style="min-width:300px;">
-              <BrandsName v-on:state="ward01=$event"></BrandsName>
+              <BrandsName v-on:state="ward01=$event.name"></BrandsName>
             </div>
             <!--  -->
             <div class="content_li" style="min-width:350px;">
