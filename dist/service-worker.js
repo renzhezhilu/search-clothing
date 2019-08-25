@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.525c665d64523dd50e83b5ca586241ad.js"
+  "precache-manifest.334e3098f038fc97289685a01a2b9745.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "search-clothes"});
