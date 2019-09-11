@@ -181,6 +181,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.home {
+  background-color: #fff;
+}
 .go_google {
   padding: 10px;
   display: flex;
@@ -190,11 +193,12 @@ export default {
     font-size: 32px;
     padding-right: 15px;
   }
+  
 }
 .search {
-  background-color: #eee;
+  background-color: #fff;
   padding: 10px;
-  margin: 10px 0;
+  margin: 20px ;
   border-radius: 4px;
   border-left: 5px solid #409eff;
 }

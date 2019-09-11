@@ -97,9 +97,11 @@ export default {
     this.restaurants = this.loadAll();
   },
   watch: {
-    // state: function(val, oldVal) {
-    //   this.$emit("state",this.state);
-    // }
+    state: function(val, oldVal) {
+      let state02 = {}
+      state02.name = this.state
+      this.$emit("state",state02);
+    }
   }
 };
 </script>

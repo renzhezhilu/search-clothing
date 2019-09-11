@@ -7,7 +7,7 @@ Vue.config.productionTip = false;
 
 
 //组件库
-// import './plugins/element.js'
+import './plugins/element.js'
 //pwa
 import './registerServiceWorker'
 
