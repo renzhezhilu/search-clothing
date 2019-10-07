@@ -20,20 +20,20 @@ Vue.use(Router);
 
 let router = new Router({
     routes: [
-        // {
-        //     path: "/",
-        //     name: "search",
-        //     component: () => import("./search_src/views/Search.vue"),
-        //     meta: {
-        //         title: 'search-clothing' // 标题设置
-        //     }
-        // },
         {
             path: "/",
-            name: "home",
-            component: () =>
-                import("./views/Home.vue")
+            name: "search",
+            component: () => import("./search_src/views/Search.vue"),
+            meta: {
+                title: 'search-clothing' // 标题设置
+            }
         },
+        // {
+        //     path: "/home",
+        //     name: "home",
+        //     component: () =>
+        //         import("./views/Home.vue")
+        // },
         // {
         //     path: "/about",
         //     name: "about",
